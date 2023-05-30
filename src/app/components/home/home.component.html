@@ -1,0 +1,20 @@
+<input (keypress)="applyFilter()" [(ngModel)]="filtro" type="text">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let title of displayedColumns">
+        {{title}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr (click)="rowSelcted(item)" *ngFor="let item of personajes">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.gender }}</td>
+      <td>{{ item.homeworld }}</td>
+      <td>{{ item.species }}</td>
+    </tr>
+  </tbody>
+</table>
