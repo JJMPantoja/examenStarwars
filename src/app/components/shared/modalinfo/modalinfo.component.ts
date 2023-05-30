@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { PersonajeModel } from 'src/app/models/models';
 
 @Component({
@@ -12,8 +12,11 @@ export class ModalinfoComponent {
   constructor(public dialogRef: MatDialogRef<ModalinfoComponent>, 
               @Inject(MAT_DIALOG_DATA) public data: PersonajeModel          
     ) {
-
       console.log(this.data);
     }  
+
+    close(): void {
+      this.dialogRef.close();
+    }
 
 }

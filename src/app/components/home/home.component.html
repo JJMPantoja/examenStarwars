@@ -1,20 +1,33 @@
-<input (keypress)="applyFilter()" [(ngModel)]="filtro" type="text">
 
-<table class="table">
-  <thead>
-    <tr>
-      <th *ngFor="let title of displayedColumns">
-        {{title}}
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr (click)="rowSelcted(item)" *ngFor="let item of personajes">
-      <td>{{ item.id }}</td>
-      <td>{{ item.name }}</td>
-      <td>{{ item.gender }}</td>
-      <td>{{ item.homeworld }}</td>
-      <td>{{ item.species }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form class="w-100">
+        <mat-form-field class="w-100 bg-transparent text-dark" appearance="fill">
+          <mat-label>Filtro</mat-label>
+          <input class="w-100" type="text" matInput [(ngModel)]="filtro" placeholder="Ex. Ana">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th *ngFor="let title of displayedColumns">
+          {{title}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="rowTable" (click)="rowSelcted(item)" *ngFor="let item of personajes | filter: filtro">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.gender }}</td>
+        <td>{{ item.homeworld }}</td>
+        <td>{{ item.species }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

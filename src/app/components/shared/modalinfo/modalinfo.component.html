@@ -1,15 +1,26 @@
-<mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title></mat-card-title>
-      <mat-card-subtitle>{{data.name}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="data.image" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p> Altura: {{data.height}}</p>
-      <p> Color de ojos: {{data.eyeColor}}</p>
-      <p> Es moreno?: {{data.skinColor}}</p>
-      
-    </mat-card-content>
-  </mat-card>
+<div class="row p-0 m-0">
+  <div class="col p-0 m-0 d-flex justify-content-end iconClose">
+    <mat-icon (click)="close()">close</mat-icon>
+  </div>
+</div>
+<div class="container p-0">
+
+  <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title></mat-card-title>
+        <mat-card-subtitle>{{data.name | uppercase}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="imgCard" [src]="data.image" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p> Altura: {{data.height}}</p>
+        <p> Color de ojos: {{(data.eyeColor[0] | uppercase) + (data.eyeColor.substring(1) | lowercase)}}</p>
+        <p> Es moreno?: {{(data.skinColor[0] | uppercase) + (data.skinColor.substring(1) | lowercase)}}</p>
+        <p> Tipo de especie: {{(data.species[0] | uppercase) + (data.species.substring(1) | lowercase)}}</p>
+        <ul>
+          <li class="listaMaestros" *ngFor="let maestro of data.masters">{{maestro}}</li>
+        </ul>
+        
+      </mat-card-content>
+    </mat-card>
+</div>
   

@@ -12,10 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import { FilterPipe } from './pipes/filter.pipe';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ModalinfoComponent],
+  declarations: [AppComponent, HomeComponent, ModalinfoComponent, FilterPipe],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -26,7 +29,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatIconModule
   ],
   exports: [MatTableModule ],
   providers: [],

@@ -14,7 +14,7 @@ import { ModalinfoComponent } from '../shared/modalinfo/modalinfo.component';
 export class HomeComponent  {
 
   personajes: PersonajeModel[] = []
-  displayedColumns: string[] = ['id', 'name', 'gender', 'homeworld', 'species'];
+  displayedColumns: string[] = ['ID', 'Nombre', 'Genero', 'Mundo', 'Especie'];
   filtro = '';
   
 
