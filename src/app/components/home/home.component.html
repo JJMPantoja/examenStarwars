@@ -1,17 +1,17 @@
 
 <div class="container">
-  <div class="row">
+  <div class="row mb-3">
     <div class="col-12">
       <form class="w-100">
         <mat-form-field class="w-100 bg-transparent text-dark" appearance="fill">
           <mat-label>Filtro</mat-label>
-          <input class="w-100" type="text" matInput [(ngModel)]="filtro" placeholder="Ex. Ana">
+          <input class="w-100" type="text" matInput [(ngModel)]="filtro" name="filtro" placeholder="Ex. Ana">
         </mat-form-field>
       </form>
     </div>
   </div>
   
-  <table class="table table-borderless">
+  <table class="table">
     <thead>
       <tr>
         <th *ngFor="let title of displayedColumns">
@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="rowTable" (click)="rowSelcted(item)" *ngFor="let item of personajes | filter: filtro">
+      <tr class="tbRow" (click)="rowSelcted(item)" *ngFor="let item of personajes | filter: filtro">
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.gender }}</td>
